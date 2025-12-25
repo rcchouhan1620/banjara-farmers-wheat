@@ -1,0 +1,12 @@
+/* .bg-amber-800{
+    background-color: #166534 !important;
+} */
+.nav-item:hover {
+  background: #eef3ff !important;
+}
+
+.nav-item.active {
+  background: #4a6cff;
+  color: white;
+}
+

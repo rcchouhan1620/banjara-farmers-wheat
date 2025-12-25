@@ -1,0 +1,97 @@
+<section class="py-16">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-4xl font-bold text-center mb-4 text-gray-800">Send Enquiry</h2>
+    <p class="text-center text-gray-600 mb-8">Minimum order quantity: 3 quintals (300 kg)</p>
+    
+    <div *ngIf="formSubmitted" class="bg-green-50 border-2 border-green-500 rounded-xl p-8 text-center">
+      <lucide-icon [img]="CheckCircle" class="w-16 h-16 text-green-600 mx-auto mb-4"></lucide-icon>
+      <h3 class="text-2xl font-bold text-green-800 mb-2">Enquiry Submitted Successfully!</h3>
+      <p class="text-gray-700 mb-4">Thank you for your interest. Our team will contact you within 24 hours.</p>
+      <button (click)="formSubmitted = false"
+              class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+        Submit Another Enquiry
+      </button>
+    </div>
+
+    <form *ngIf="!formSubmitted" (ngSubmit)="onSubmit()" class="bg-white rounded-xl shadow-lg p-8">
+      <div *ngIf="errorMessage" class="bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-6">
+        {{errorMessage}}
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Full Name <span class="required">*</span></label>
+          <input type="text" 
+                 [(ngModel)]="formData.name" 
+                 name="name"
+                 required
+                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Email <span class="required">*</span></label>
+          <input type="email" 
+                 [(ngModel)]="formData.email" 
+                 name="email"
+                 required
+                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Phone Number <span class="required">*</span></label>
+          <input type="tel" 
+                 [(ngModel)]="formData.phone" 
+                 name="phone"
+                 required
+                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+        </div>
+        <div>
+          <label class="block text-gray-700 font-semibold mb-2">Select Region <span class="required">*</span></label>
+          <select [(ngModel)]="formData.region" 
+                  name="region"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+            <option value="">Choose a region</option>
+            <option *ngFor="let region of regions" [value]="region.name">{{region.name}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-semibold mb-2">Quantity (Quintals) <span class="required">*</span> - Minimum 3</label>
+        <input type="number" 
+               [(ngModel)]="formData.quantity" 
+               name="quantity"
+               min="3"
+               required
+               placeholder="Enter quantity (minimum 3 quintals)"
+               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+        <p class="text-sm text-gray-500 mt-1">1 Quintal = 100 kg</p>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-semibold mb-2">Delivery Address <span class="required">*</span></label>
+        <textarea [(ngModel)]="formData.address" 
+                  name="address"
+                  rows="3"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+      </div>
+
+      <div class="mb-6">
+        <label class="block text-gray-700 font-semibold mb-2">Additional Message</label>
+        <textarea [(ngModel)]="formData.message" 
+                  name="message"
+                  rows="4"
+                  placeholder="Any specific requirements or questions?"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+      </div>
+
+      <button type="submit"
+              class="w-full bg-gradient-to-r from-green-600 to-green-600 text-white py-4 rounded-lg font-bold text-lg hover:from-green-700 hover:to-green-700 transition transform hover:scale-105 shadow-lg">
+        Submit Enquiry
+      </button>
+    </form>
+  </div>
+</section>

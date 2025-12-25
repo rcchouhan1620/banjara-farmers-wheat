@@ -1,0 +1,55 @@
+<header class="bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <lucide-icon [img]="Wheat" class="w-10 h-10"></lucide-icon>
+        <div>
+          <h1 class="text-2xl font-bold">Banjara Farmer's Wheat</h1>
+          <p class="text-sm text-amber-100">Direct from Farmers to You</p>
+        </div>
+      </div>
+      <!-- <nav class="hidden md:flex space-x-6 items-center"> -->
+        <!-- <a routerLink="/home" routerLinkActive="font-bold" class="hover:text-amber-200 transition .nav-item">Home</a>
+        <a routerLink="/regions" routerLinkActive="font-bold" class="hover:text-amber-200 transition .nav-item">Regions</a>
+        <a routerLink="/enquiry" routerLinkActive="font-bold" class="hover:text-amber-200 transition .nav-item">Enquiry</a>
+        <a routerLink="/about" routerLinkActive="font-bold" class="hover:text-amber-200 transition .nav-item">About Us</a> -->
+        <nav class="hidden md:flex space-x-3 items-center">
+        <a routerLink="/home" routerLinkActive="active-link" class="nav-item">Home</a>
+        <a routerLink="/regions" routerLinkActive="active-link" class="nav-item">Regions</a>
+        <a routerLink="/enquiry" routerLinkActive="active-link" class="nav-item">Enquiry</a>
+        <a routerLink="/about" routerLinkActive="active-link" class="nav-item">About Us</a>
+        <button *ngIf="(isLoggedIn$ | async); else loginButton" 
+                (click)="logout()" 
+                class="bg-red-500 hover:bg-red-600 px-4 py-1 rounded transition">
+          Logout
+        </button>
+        <ng-template #loginButton>
+          <!-- <a routerLink="/login" routerLinkActive="font-bold" class="hover:text-amber-200 transition .nav-item">Login</a> -->
+            <a routerLink="/login" routerLinkActive="active-link" class="nav-item">Login</a>
+        </ng-template>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="md:hidden bg-green-700 text-white">
+  <div class="container mx-auto px-4 py-2 flex justify-around text-sm">
+    <!-- <a routerLink="/home" routerLinkActive="hoever:bg-amber-800 rounded" class="px-2 py-2">Home</a>
+    <a routerLink="/regions" routerLinkActive="bg-amber-800 rounded" class="px-2 py-2">Regions</a>
+    <a routerLink="/enquiry" routerLinkActive="bg-amber-800 rounded" class="px-2 py-2">Enquiry</a>
+    <a routerLink="/about" routerLinkActive="bg-amber-800 rounded" class="px-2 py-2">About</a> -->
+    <a routerLink="/home" routerLinkActive="active-link" class="nav-item">Home</a>
+    <a routerLink="/regions" routerLinkActive="active-link" class="nav-item">Regions</a>
+    <a routerLink="/enquiry" routerLinkActive="active-link" class="nav-item">Enquiry</a>
+    <a routerLink="/about" routerLinkActive="active-link" class="nav-item">About Us</a>
+    <button *ngIf="(isLoggedIn$ | async); else mobileLogin" 
+            (click)="logout()" 
+            class="px-2 py-2 bg-red-500 rounded">
+      Logout
+    </button>
+    <ng-template #mobileLogin>
+      <!-- <a routerLink="/login" routerLinkActive="bg-amber-800 rounded" class="px-2 py-2">Login</a> -->
+      <a routerLink="/login" routerLinkActive="active-link" class="nav-item">Login</a>
+    </ng-template>
+  </div>
+</div>

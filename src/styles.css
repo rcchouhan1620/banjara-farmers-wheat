@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.to-orange-600 {
+    --tw-gradient-to: #008631 var(--tw-gradient-to-position) !important;
+}
+.from-amber-600 {
+    --tw-gradient-from: #008631 var(--tw-gradient-from-position) !important;
+    
+}
+.to-orange-500 {
+    --tw-gradient-to: #008631 var(--tw-gradient-to-position) !important;
+}
+.from-amber-500 {
+    --tw-gradient-from: #008631 var(--tw-gradient-from-position) !important;
+   
+}
+ /* .bg-white text-amber-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-100 transition transform hover:scale-105 shadow-lg {
+    --tw-text-opacity: 1;
+    /* color: rgb(217 119 6 / var(--tw-text-opacity, 1)); 
+    color: #008631 var(--tw-text-opacity, 1) !important;
+}  */
+.text-amber-600 {
+    --tw-text-opacity: 1;
+    color: #008631;
+}
+.text-orange-600 {
+    --tw-text-opacity: 1;
+    color:  #008631 var(--tw-text-opacity, 1) !important;
+}
+
+.logo-text-green-600 {
+    --tw-text-opacity: 1;
+    color:  #008631 var(--tw-text-opacity, 1) !important;
+}
+
+.nav-item {
+  @apply px-3 py-2 rounded transition font-medium;
+}
+
+/* Hover effect */
+.nav-item:hover {
+  @apply text-green-700;
+}
+
+/* Active route (applied by Angular) */
+.active-link {
+  @apply bg-white text-green-700 rounded shadow;
+}
+.required{
+    color: red !important;
+}
