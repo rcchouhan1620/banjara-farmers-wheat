@@ -12,17 +12,17 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 .to-orange-600 {
-    --tw-gradient-to: #008631 var(--tw-gradient-to-position) !important;
+    --tw-gradient-to: #22c55e var(--tw-gradient-to-position) !important;
 }
 .from-amber-600 {
-    --tw-gradient-from: #008631 var(--tw-gradient-from-position) !important;
+    --tw-gradient-from: #22c55e var(--tw-gradient-from-position) !important;
     
 }
 .to-orange-500 {
-    --tw-gradient-to: #008631 var(--tw-gradient-to-position) !important;
+    --tw-gradient-to: #22c55e var(--tw-gradient-to-position) !important;
 }
 .from-amber-500 {
-    --tw-gradient-from: #008631 var(--tw-gradient-from-position) !important;
+    --tw-gradient-from: #22c55e var(--tw-gradient-from-position) !important;
    
 }
  /* .bg-white text-amber-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-100 transition transform hover:scale-105 shadow-lg {

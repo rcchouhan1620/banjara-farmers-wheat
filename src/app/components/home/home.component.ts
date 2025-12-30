@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { LucideAngularModule, Users, Award, Truck, CheckCircle } from 'lucide-angular';
 import { RegionService } from '../../services/region.service';
 import { Region } from '../../models/region.model';
+import { WheatQualityCardComponent } from '../wheat-quality-card/wheat-quality-card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule,WheatQualityCardComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
   navigateToRegions(): void {
     this.router.navigate(['/regions']);
   }
-
+  
   selectRegion(region: Region): void {
     this.regionService.setSelectedRegion(region);
     this.router.navigate(['/enquiry']);
